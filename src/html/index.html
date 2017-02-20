@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="//www.naturalresources.sa.gov.au/files/templates/00000000-0000-0000-0000-000000000000/f399c717-3483-4ac4-ac72-f5b9f904f8c1/main-ffbe7f0cba.css">
+	<style>
+		.temp-wrapper {
+			background: #fff;
+			margin: 0 auto;
+			max-width: 865px;
+			padding: 20px;
+		}
+	</style>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<div class="temp-wrapper">
+	<h2>test</h2>
+	<div ng-app="case-studies" ng-controller="StudiesController as mylist">
+		Costs: <input type="number" min="0" ng-model="invoice.cost" required >
+		{{invoice.cost}}
+	</div>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.11/angular-filter.min.js"></script>  <!-- from here - https://github.com/a8m/angular-filter#get-started -->
+<script src="js/controller.js"></script>
+
+
+</body>
+</html>

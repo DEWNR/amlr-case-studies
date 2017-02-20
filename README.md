@@ -1,2 +1,1 @@
-# amlr-case-studies
-amlr-case-studies
+# AMLR Case Studies

@@ -1,0 +1,7 @@
+*.sass-cache
+*.sublime-*
+*.log
+.DS_Store
+
+public
+node_modules

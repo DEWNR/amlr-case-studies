@@ -1,0 +1,118 @@
+/*------------------------------------*\
+    #GENERAL SETTINGS
+\*------------------------------------*/
+
+
+/* == Tint and shade percentage == */
+
+$tint-base: 75%;
+$shade-base: $tint-base;
+
+
+
+
+
+/* == High-level colours == */
+
+$color-primary: #0e3050;
+$color-secondary: #9e948b;
+$color-text-base: #494847;
+$color-text-reverse: #fff;
+$color-background-base: #fff;
+
+
+$color-grey-1: #95989a;
+$color-grey-2: #e8e8e8;
+$color-grey-3: #d9d9d9;
+$color-grey-4: #c4c4c4;
+
+$color-blue-lagoon: #008995;
+$color-san-juan: #2d5267;
+$color-chelsea-cucumber: #72a94f;
+$color-web-orange: #f8a800;
+$color-biscay: #1d426b;
+$color-cadillac: #a7466f;
+$color-flush-mahogany: #c33b32;
+$color-jelly-bean: #2999a3;
+$color-buttercup: #f5af1b;
+$color-hippie-blue: #6ba3b8;
+$color-lochmara: #0075c9;
+$color-daisy-bush: #63269d;
+
+
+
+
+/* == Utility colours == */
+
+$color-success: shade(#008000, $tint-base);
+$color-warning: shade(#ffa500, $tint-base);
+$color-danger: shade(#f00, $tint-base);
+
+
+
+
+
+/* = Fonts =*/
+
+$font-family-base: 'Frutiger W01', sans-serif;
+$font-family-highlight: 'Dewnrger', 'Frutiger W01', sans-serif;
+
+
+$font-size-base: 16px;
+$line-height-base: 20px;
+
+
+$image-path: '../images/';
+$path-fonts: '../fonts/';
+
+// $image-path: '';
+
+
+
+
+
+/* = Layout = */
+
+$spacing-unit-base: $line-height-base;
+
+
+$max-width: 1024px;
+
+
+
+
+
+/* = Animation = */
+
+$transition-time: 0.3s;
+
+
+
+
+
+@ant-gutters 20px;
+
+
+
+
+
+/* = Media queries = */
+
+/**
+ * This notation has been chosen as it is compatible with Inuit CSS
+ * `media-query()` mixin found in `_tools.responsive`.
+ **/
+
+$breakpoints: (
+    'small-and-up': 'screen and (min-width: 480px)',
+    'medium-and-up': 'screen and (min-width: 640px)',
+    'large-and-up': 'screen and (min-width: 720px)',
+    'huge': 'screen and (min-width: 1024px)'
+);
+
+$media-queries: map-merge(
+    $breakpoints,
+    (
+        'retina': '(-webkit-min-device-pixel-ratio: 1.5), (-moz-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), min-resolution: 1.5dppx)'
+    )
+);
