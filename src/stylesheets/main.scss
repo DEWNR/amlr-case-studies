@@ -1,3 +1,237 @@
+@import '_variables';
+
 /* == Settings == */
 
+.temp-wrapper {
+  background: $color-background-base;
+  margin: 0 auto;
+  max-width: 865px;
+  padding: 20px;
+}
 
+
+.searchcontrol {
+  // display: inline-block;
+  margin: 10px;
+  max-width: 320px;
+
+  label {
+    width: 100%;
+  }
+
+  input {
+    &[type='text'] {
+      // line-height : 1.6em;
+      height: 24px;
+      min-width: 200px;
+    }
+  }
+}
+
+.themescontrol {
+  display: inline-block;
+  margin: 10px;
+
+  select {
+    min-width: 200px;
+  }
+}
+
+.yrLevelcontrol {
+  // display: inline-block;
+  margin: 10px;
+  width: 190px;
+}
+
+.progresscontrol {
+  display: inline-block;
+  margin: 10px;
+  width: 342px;
+
+  @media (max-width: 420px) {
+    width: calc(100% - 40px);
+
+    label {
+      display: block;
+    }
+  }
+}
+
+.EfSPcontrol {
+  display: inline-block;
+  margin: 10px;
+}
+
+.clearbutton {
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: auto;
+  width: 50%;
+
+  button {
+    // height: 30px;
+    padding: 6px;
+  }
+}
+
+fieldset {
+  border: 1px solid #efefef;
+  display: inline-block;
+  margin-bottom: 6px;
+  margin-right: 10px;
+  // max-width: 46%;
+}
+
+legend {
+
+  padding: 0.2em 0.5em;
+}
+
+select {
+  height: 24px;
+}
+
+em {
+  // display: inline-block;
+  font-style: normal;
+  font-weight: 300;
+  width: 100px;
+}
+
+input {
+  &[type='radio'] {
+    // line-height : 1.6em;
+    height: 20px;
+    vertical-align: middle;
+    width: 20px;
+  }
+}
+
+
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak],
+[x-ng-cloak], .ng-cloak, .x- ng-cloak {
+  display: none !important;
+}
+
+.study {
+  border-bottom: 1px solid #dfdfdf;
+  display: block;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  width: 100%;
+}
+
+.list {
+  line-height: 1.4em;
+
+  .study__image {
+    display: inline-block;
+    margin-top: 22px;
+    vertical-align: top;
+    width: 250px;
+  }
+
+  .study__details {
+    display: inline-block;
+    width: calc(100% - 260px);
+  }
+
+  a img {
+    height: 150px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    width: 230px;
+  }
+
+  :hover {
+    text-decoration: none;
+  }
+
+  p {
+    line-height: 1.4em;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+}
+
+a[href$='.pdf'] .details__author:after {
+  // PDF file
+  background: url('//wwwimages.adobe.com/content/dam/acom/en/legal/images/badges/Adobe_PDF_file_icon_32x32.png');
+  content: ' ';
+  display: block;
+  height: 32px;
+  vertical-align: top;
+  width: 32px;
+}
+
+// a[href$='.doc'],
+// a[href$='.docx'],
+// a[href$='.rtf'] {
+//   .details__author {
+
+//    &::after {
+//       background: red!important;
+//     }
+
+//   }
+
+// }
+
+a[href$='.doc'] .details__author:after,
+a[href$='.docx'] .details__author:after,
+a[href$='.rtf'] .details__author:after {
+  // DOC file
+  background: url('//careerssearch.bbc.co.uk//application/assets/x/images/file_extension_doc.png');
+  content: ' ';
+  display: block;
+  height: 32px;
+  vertical-align: top;
+  width: 32px;
+
+}
+
+a[href*='.youtu.be'] .details__author:after,
+a[href*='.youtube.com'] .details__author:after {
+  // YouTube link
+
+  background: url('//www.youtube.com/yts/img/favicon_32-vfl8NGn4k.png');
+  content: ' ';
+  display: block;
+  height: 32px;
+  vertical-align: top;
+  width: 32px;
+
+}
+
+a[href$='.htm'] .details__author:after,
+a[href$='.html'] .details__author:after,
+a[href*='/adelaidemtloftyranges/case-study/'] .details__author:after {
+  // HTML file/link
+  background: url('//www.w3.org/html/logo/downloads/HTML5_Logo_64.png');
+  content: ' ';
+  display: block;
+  height: 32px;
+  vertical-align: top;
+  width: 32px;
+}
+
+@media (max-width: 768px) {
+
+  .list .study__image {
+    display: block;
+    width: 100%;
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .list .study__details {
+    display: block;
+    width: calc(100% - 10px);
+  }
+
+}

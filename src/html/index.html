@@ -5,22 +5,78 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title></title>
 	<link rel="stylesheet" href="//www.naturalresources.sa.gov.au/files/templates/00000000-0000-0000-0000-000000000000/f399c717-3483-4ac4-ac72-f5b9f904f8c1/main-ffbe7f0cba.css">
-	<style>
-		.temp-wrapper {
-			background: #fff;
-			margin: 0 auto;
-			max-width: 865px;
-			padding: 20px;
-		}
-	</style>
 	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-<div class="temp-wrapper">
-	<h2>test</h2>
-	<div ng-app="case-studies" ng-controller="StudiesController as mylist">
-		Costs: <input type="number" min="0" ng-model="invoice.cost" required >
-		{{invoice.cost}}
+<div ng-app="caseStudies" class="temp-wrapper">
+	<h1>AMLR Case Studies</h1>
+	<div ng-controller="StudiesController" class="studieswrap">
+		<div class="searchInputs">
+			<div class="searchcontrol">
+				<label>Search </label><input ng-model="search.$" type="text" min="0" >
+			</div>
+
+			<div class="themescontrol">
+				<label>Themes </label>
+				<select ng-model="search.themes">
+					<option value=""> - </option>
+					<option value="biodiversity">biodiversity</option>
+					<option value="food garden">food garden</option>
+					<option value="Youth Voice">Youth Voice</option>
+					<option value="Outdoor play space">Outdoor play space</option>
+				</select>
+			</div>
+
+			<div class="clearbutton">
+				<button type="button" ng-click="clearFilter();">Clear buttons</button>
+			</div>
+			<fieldset class="yrLevelcontrol">
+				<legend>Year Level </legend>
+				<label><input ng-model="search.yrLevel" type="radio" name="yearlvl" value="early"><em>Early</em></label>
+				<label><input ng-model="search.yrLevel" type="radio" name="yearlvl" value="PS"><em>Primary</em></label>
+				<label><input ng-model="search.yrLevel" type="radio" name="yearlvl" value="HS"><em>High</em></label>
+			</fieldset>
+			<fieldset class="progresscontrol">
+				<legend>Progress </legend>
+				<label><input ng-model="search.progress" type="radio" name="progress" value="Starting"><em>Starting</em></label>
+				<label><input ng-model="search.progress" type="radio" name="progress" value="Committing"><em>Committing</em></label>
+				<label><input ng-model="search.progress" type="radio" name="progress" value="Challenging"><em>Challenging</em></label>
+				<label><input ng-model="search.progress" type="radio" name="progress" value="Transfer"><em>Transfer</em></label>
+			</fieldset>
+			<div class="EfSPcontrol">
+				<label>EFSP </label>
+				<select ng-model="search.EfSPrinciples">
+					<option value=""> - </option>
+					<option value="Curriculum">Curriculum and learning</option>
+					<option value="Vision">Vision and values</option>
+					<option value="Whole">Whole school approach</option>
+					<option value="Governance">Governance</option>
+					<option value="Community">Community</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="list" ng-cloak>
+			<a ng-repeat="study in allData | filter:search | orderBy: 'title' " class="study ng-cloak" href="{{::study.studyURL}}">
+
+				<div class="study__image">
+					<img ng-src="{{::study.imageURL}}" alt="thumbnail for {{::study.title}}">
+				</div>
+
+				<div class="study__details">
+					<h2 class="details__title">{{::study.title}}</h2>
+					<p class="details__schools"><em>Schools:</em> {{::study.schools}}</p>
+					<p class="details__yrLevel"><em>yrLevel:</em> {{::study.yrLevel}}</p>
+					<p class="details__progress"><em>progress:</em> {{::study.progress}}</p>
+					<p class="details__efsp"><em>EfSPrinciples:</em> {{::study.EfSPrinciples}}</p>
+					<p class="details__themes"><em>themes:</em> {{::study.themes}}</p>
+					<p class="details__date"><em>date:</em> {{::study.date}}</p>
+					<p class="details__author"><em>author:</em> {{::study.author}}</p>
+				</div>
+
+			</a>
+		</div>
+
 	</div>
 
 </div>
@@ -29,6 +85,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.11/angular-filter.min.js"></script>  <!-- from here - https://github.com/a8m/angular-filter#get-started -->
 <script src="js/controller.js"></script>
+<!-- <script src="js/main.js"></script> -->
 
 
 </body>

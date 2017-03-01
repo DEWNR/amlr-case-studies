@@ -13,9 +13,14 @@
           "files": [
               {
                 "source": [
-                    "src/javascripts/main.js"
+                    "src/javascripts/controller.js"
                 ],
-                "filename": "app.js"
+                "filename": "controller.js"
+              }, {
+                "source": [
+                    "src/javascripts/studies-data.json"
+                ],
+                "filename": "studies-data.json"
               }
           ],
           "extensions": ["js"]
