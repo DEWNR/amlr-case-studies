@@ -72,7 +72,17 @@
 
   button {
     // height: 30px;
-    padding: 6px;
+    padding: 14px;
+    border-radius: 7px;
+    border: 2px solid #bf9fd6;
+    background-color: #fff;
+
+    // background-color: #59178a;
+    // border: 0;
+    // color: #fff;
+    &:hover {
+        background-color: #bf9fd6;
+    }
   }
 }
 
@@ -188,6 +198,7 @@ input {
 
 
 .study__details>a:last-of-type {
+
     // PDF file
     &[href$='.pdf'] {
         background: url('../icons/file-pdf-o.svg');
@@ -198,64 +209,48 @@ input {
         vertical-align: top;
         margin: 4px 0 10px 0;
     }
+
+    // YouTube link
+    &[href*='.youtu.be'],
+    &[href*='.youtube.com'] {
+        background: url('../icons/youtube-play.svg');
+        background-size: cover;
+        display: block;
+        height: 20px;
+        width: 20px;
+        vertical-align: top;
+        margin: 4px 0 10px 0;
+    }
+
+    // HTML file/link
+    &[href$='.htm'],
+    &[href$='.html'],
+    &[href*='/adelaidemtloftyranges/case-study/'] {
+        background: url('../icons/file-o.svg');
+        background-size: cover;
+        display: block;
+        height: 20px;
+        width: 20px;
+        vertical-align: top;
+        margin: 4px 0 10px 0;
+    }
+
+    &[href$='.doc'],
+    &[href$='.docx'],
+    &[href$='.rtf'] {
+        // DOC file
+        background: url('../icons/file-word-o.svg');
+        background-size: cover;
+        display: block;
+        height: 20px;
+        width: 20px;
+        vertical-align: top;
+        margin: 4px 0 10px 0;
+    }
+
+
 }
 
-
-
-
-a[href$='.pdf'] .study__details>p:last-of-type:after {
-  // PDF file
-  background: url('../icons/file-pdf-o.svg');
-  background-size: cover;
-  content: ' ';
-  display: block;
-  height: 20px;
-  width: 20px;
-  vertical-align: top;
-  margin: 4px 0 10px 0;
-}
-
-
-a[href*='.youtu.be'] .study__details>p:last-of-type:after,
-a[href*='.youtube.com'] .study__details>p:last-of-type:after {
-  // YouTube link
-  background: url('../icons/youtube-play.svg');
-  background-size: cover;
-  content: ' ';
-  display: block;
-  height: 20px;
-  width: 20px;
-  vertical-align: top;
-  margin: 4px 0 10px 0;
-}
-
-a[href$='.htm'] .study__details>p:last-of-type:after,
-a[href$='.html'] .study__details>p:last-of-type:after,
-a[href*='/adelaidemtloftyranges/case-study/'] .study__details>p:last-of-type:after {
-  // HTML file/link
-  background: url('../icons/file-o.svg');
-  background-size: cover;
-  content: ' ';
-  display: block;
-  height: 20px;
-  width: 20px;
-  vertical-align: top;
-  margin: 4px 0 10px 0;
-}
-
-a[href$='.doc'] .study__details>p:last-of-type:after,
-a[href$='.docx'] .study__details>p:last-of-type:after,
-a[href$='.rtf'] .study__details>p:last-of-type:after {
-  // DOC file
-  background: url('../icons/file-word-o.svg');
-  background-size: cover;
-  content: ' ';
-  display: block;
-  height: 20px;
-  width: 20px;
-  vertical-align: top;
-  margin: 4px 0 10px 0;
-}
 
 
 @media (max-width: 768px) {
