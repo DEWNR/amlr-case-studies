@@ -38,6 +38,13 @@
         },
 
 
+        "icons": {
+            "src": "icons",
+            "dest": "icons",
+            "extensions": ["svg", "gif", "png"]
+        },
+
+
         "images": {
             "src": "images",
             "dest": "images",
