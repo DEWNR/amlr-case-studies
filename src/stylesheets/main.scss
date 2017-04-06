@@ -1,4 +1,4 @@
-@import '_variables';
+@import 'variables';
 
 /* == Settings == */
 
@@ -23,30 +23,31 @@
     &[type='text'] {
       // line-height : 1.6em;
       height: 24px;
-      min-width: 200px;
+      min-width: 250px;
+      padding: 0 4px 0 4px;
     }
   }
 }
 
 .themescontrol {
-  display: inline-block;
-  margin: 10px;
+    display: inline-block;
+    margin: 10px;
 
-  select {
-    min-width: 200px;
-  }
+    select {
+        min-width: 200px;
+    }
 }
 
 .yrLevelcontrol {
-  // display: inline-block;
-  margin: 10px;
-  width: 190px;
+    // display: inline-block;
+    margin: 10px;
+    width: 202px;
 }
 
 .progresscontrol {
   display: inline-block;
   margin: 10px;
-  width: 342px;
+  width: 394px;
 
   @media (max-width: 420px) {
     width: calc(100% - 40px);
@@ -58,7 +59,7 @@
 }
 
 .EfSPcontrol {
-  display: inline-block;
+  display: block;
   margin: 10px;
 }
 
@@ -66,12 +67,17 @@
   display: inline-block;
   margin-left: 10px;
   margin-right: auto;
-  width: 50%;
+  width: 20%;
+  min-width: 114px;
 
   button {
     // height: 30px;
     padding: 6px;
   }
+}
+
+label {
+    margin-right: 10px;
 }
 
 fieldset {
@@ -80,10 +86,15 @@ fieldset {
   margin-bottom: 6px;
   margin-right: 10px;
   // max-width: 46%;
+  label {
+    margin-right: 0;
+  }
+  label:not(:last-of-type) {
+    margin-right: 6px;
+  }
 }
 
 legend {
-
   padding: 0.2em 0.5em;
 }
 
@@ -92,10 +103,7 @@ select {
 }
 
 em {
-  // display: inline-block;
-  font-style: normal;
-  font-weight: 300;
-  width: 100px;
+    font-style: normal;
 }
 
 input {
@@ -107,7 +115,13 @@ input {
   }
 }
 
-
+input {
+  &[type='checkbox'] {
+    height: 20px;
+    vertical-align: middle;
+    width: 20px;
+  }
+}
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak],
 [x-ng-cloak], .ng-cloak, .x- ng-cloak {
@@ -120,6 +134,9 @@ input {
   padding-bottom: 10px;
   padding-top: 10px;
   width: 100%;
+  // &:hover {
+  //   background-color: #EFEFEF;
+  // }
 }
 
 .list {
@@ -128,20 +145,33 @@ input {
   .study__image {
     display: inline-block;
     margin-top: 22px;
+    // margin-right: 10px;
     vertical-align: top;
-    width: 250px;
+    width: 288px;
+    a {
+        display: block;
+        padding-right: 20px;
+    }
   }
 
   .study__details {
     display: inline-block;
-    width: calc(100% - 260px);
+    width: calc(100% - 291px);
+    p {
+        padding: 1px 0 1px 0;
+    }
+    em {
+        display: inline-block;
+        font-weight: 600;
+        min-width: 60px;
+        margin-right: 4px;
+    }
   }
 
   a img {
     height: 150px;
     margin-bottom: 20px;
-    margin-right: 10px;
-    width: 230px;
+    width: 100%;
   }
 
   :hover {
@@ -156,66 +186,77 @@ input {
 
 }
 
-a[href$='.pdf'] .details__author:after {
+
+.study__details>a:last-of-type {
+    // PDF file
+    &[href$='.pdf'] {
+        background: url('../icons/file-pdf-o.svg');
+        background-size: cover;
+        display: block;
+        height: 20px;
+        width: 20px;
+        vertical-align: top;
+        margin: 4px 0 10px 0;
+    }
+}
+
+
+
+
+a[href$='.pdf'] .study__details>p:last-of-type:after {
   // PDF file
-  background: url('//wwwimages.adobe.com/content/dam/acom/en/legal/images/badges/Adobe_PDF_file_icon_32x32.png');
+  background: url('../icons/file-pdf-o.svg');
+  background-size: cover;
   content: ' ';
   display: block;
-  height: 32px;
+  height: 20px;
+  width: 20px;
   vertical-align: top;
-  width: 32px;
+  margin: 4px 0 10px 0;
 }
 
-// a[href$='.doc'],
-// a[href$='.docx'],
-// a[href$='.rtf'] {
-//   .details__author {
 
-//    &::after {
-//       background: red!important;
-//     }
-
-//   }
-
-// }
-
-a[href$='.doc'] .details__author:after,
-a[href$='.docx'] .details__author:after,
-a[href$='.rtf'] .details__author:after {
-  // DOC file
-  background: url('//careerssearch.bbc.co.uk//application/assets/x/images/file_extension_doc.png');
-  content: ' ';
-  display: block;
-  height: 32px;
-  vertical-align: top;
-  width: 32px;
-
-}
-
-a[href*='.youtu.be'] .details__author:after,
-a[href*='.youtube.com'] .details__author:after {
+a[href*='.youtu.be'] .study__details>p:last-of-type:after,
+a[href*='.youtube.com'] .study__details>p:last-of-type:after {
   // YouTube link
-
-  background: url('//www.youtube.com/yts/img/favicon_32-vfl8NGn4k.png');
+  background: url('../icons/youtube-play.svg');
+  background-size: cover;
   content: ' ';
   display: block;
-  height: 32px;
+  height: 20px;
+  width: 20px;
   vertical-align: top;
-  width: 32px;
-
+  margin: 4px 0 10px 0;
 }
 
-a[href$='.htm'] .details__author:after,
-a[href$='.html'] .details__author:after,
-a[href*='/adelaidemtloftyranges/case-study/'] .details__author:after {
+a[href$='.htm'] .study__details>p:last-of-type:after,
+a[href$='.html'] .study__details>p:last-of-type:after,
+a[href*='/adelaidemtloftyranges/case-study/'] .study__details>p:last-of-type:after {
   // HTML file/link
-  background: url('//www.w3.org/html/logo/downloads/HTML5_Logo_64.png');
+  background: url('../icons/file-o.svg');
+  background-size: cover;
   content: ' ';
   display: block;
-  height: 32px;
+  height: 20px;
+  width: 20px;
   vertical-align: top;
-  width: 32px;
+  margin: 4px 0 10px 0;
 }
+
+a[href$='.doc'] .study__details>p:last-of-type:after,
+a[href$='.docx'] .study__details>p:last-of-type:after,
+a[href$='.rtf'] .study__details>p:last-of-type:after {
+  // DOC file
+  background: url('../icons/file-word-o.svg');
+  background-size: cover;
+  content: ' ';
+  display: block;
+  height: 20px;
+  width: 20px;
+  vertical-align: top;
+  margin: 4px 0 10px 0;
+}
+
 
 @media (max-width: 768px) {
 

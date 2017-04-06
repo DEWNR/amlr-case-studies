@@ -3,13 +3,13 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title></title>
+	<title>AMLR Case Studies</title>
 	<link rel="stylesheet" href="//www.naturalresources.sa.gov.au/files/templates/00000000-0000-0000-0000-000000000000/f399c717-3483-4ac4-ac72-f5b9f904f8c1/main-ffbe7f0cba.css">
 	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 <div ng-app="caseStudies" class="temp-wrapper">
-	<h1>AMLR Case Studies</h1>
+	<h1>Case Studies</h1>
 	<div ng-controller="StudiesController" class="studieswrap">
 		<div class="searchInputs">
 			<div class="searchcontrol">
@@ -24,57 +24,64 @@
 					<option value="food garden">food garden</option>
 					<option value="Youth Voice">Youth Voice</option>
 					<option value="Outdoor play space">Outdoor play space</option>
+                    <option value="Waste">Waste</option>
 				</select>
 			</div>
 
-			<div class="clearbutton">
-				<button type="button" ng-click="clearFilter();">Clear buttons</button>
-			</div>
+            <div class="EfSPcontrol">
+                <label>Education for Sustainability aspects </label>
+                <select ng-model="search.EFSustainabilityA">
+                    <option value=""> - </option>
+                    <option value="Curriculum">Curriculum and learning</option>
+                    <option value="Vision">Vision and values</option>
+                    <option value="Whole">Whole site approach</option>
+                    <option value="Governance">Governance</option>
+                    <option value="Community">Community</option>
+                </select>
+            </div>
+
 			<fieldset class="yrLevelcontrol">
 				<legend>Year Level </legend>
-				<label><input ng-model="search.yrLevel" type="radio" name="yearlvl" value="early"><em>Early</em></label>
-				<label><input ng-model="search.yrLevel" type="radio" name="yearlvl" value="PS"><em>Primary</em></label>
-				<label><input ng-model="search.yrLevel" type="radio" name="yearlvl" value="HS"><em>High</em></label>
+				<label><input ng-model="search.yrLevel" ng-true-value="'early'" ng-false-value="''" type="checkbox" name="yearlvl" value="early"><em>Early</em></label>
+				<label><input ng-model="search.yrLevel" ng-true-value="'PS'" ng-false-value="''" type="checkbox" name="yearlvl" value="PS"><em>Primary</em></label>
+				<label><input ng-model="search.yrLevel" ng-true-value="'HS'" ng-false-value="''" type="checkbox" name="yearlvl" value="HS"><em>High</em></label>
 			</fieldset>
+
 			<fieldset class="progresscontrol">
 				<legend>Progress </legend>
-				<label><input ng-model="search.progress" type="radio" name="progress" value="Starting"><em>Starting</em></label>
-				<label><input ng-model="search.progress" type="radio" name="progress" value="Committing"><em>Committing</em></label>
-				<label><input ng-model="search.progress" type="radio" name="progress" value="Challenging"><em>Challenging</em></label>
-				<label><input ng-model="search.progress" type="radio" name="progress" value="Transfer"><em>Transfer</em></label>
+				<label><input ng-model="search.progress" ng-true-value="'Starting'" ng-false-value="''" type="checkbox" name="progress" value="Starting"><em>Starting</em></label>
+				<label><input ng-model="search.progress" ng-true-value="'Committing'" ng-false-value="''" type="checkbox" name="progress" value="Committing"><em>Committing</em></label>
+				<label><input ng-model="search.progress" ng-true-value="'Challenging'" ng-false-value="''" type="checkbox" name="progress" value="Challenging"><em>Challenging</em></label>
+				<label><input ng-model="search.progress" ng-true-value="'Transformation'" ng-false-value="''" type="checkbox" name="progress" value="Transformation"><em>Transformation</em></label>
 			</fieldset>
-			<div class="EfSPcontrol">
-				<label>EFSP </label>
-				<select ng-model="search.EfSPrinciples">
-					<option value=""> - </option>
-					<option value="Curriculum">Curriculum and learning</option>
-					<option value="Vision">Vision and values</option>
-					<option value="Whole">Whole school approach</option>
-					<option value="Governance">Governance</option>
-					<option value="Community">Community</option>
-				</select>
-			</div>
+
+            <div class="clearbutton">
+                <button type="button" ng-click="clearFilter();">clear my choices</button>
+            </div>
+
 		</div>
 
 		<div class="list" ng-cloak>
-			<a ng-repeat="study in allData | filter:search | orderBy: 'title' " class="study ng-cloak" href="{{::study.studyURL}}">
+			<div ng-repeat="study in allData | filter:search | orderBy: 'title' " class="study ng-cloak" href="{{::study.studyURL}}">
 
 				<div class="study__image">
-					<img ng-src="{{::study.imageURL}}" alt="thumbnail for {{::study.title}}">
+					<a href="{{::study.studyURL}}"><img ng-src="{{::study.imageURL}}" alt="thumbnail for {{::study.title}}"></a>
 				</div>
 
 				<div class="study__details">
-					<h2 class="details__title">{{::study.title}}</h2>
-					<p class="details__schools"><em>Schools:</em> {{::study.schools}}</p>
-					<p class="details__yrLevel"><em>yrLevel:</em> {{::study.yrLevel}}</p>
-					<p class="details__progress"><em>progress:</em> {{::study.progress}}</p>
-					<p class="details__efsp"><em>EfSPrinciples:</em> {{::study.EfSPrinciples}}</p>
-					<p class="details__themes"><em>themes:</em> {{::study.themes}}</p>
-					<p class="details__date"><em>date:</em> {{::study.date}}</p>
-					<p class="details__author"><em>author:</em> {{::study.author}}</p>
+					<a href="{{::study.studyURL}}"><h2 class="details__title">{{::study.title}}</h2></a>
+					<p class="details__schools"><em>School/s:</em> {{::study.schools}}</p>
+					<p class="details__yrLevel"><em>Year level:</em> {{::study.yrLevel}}</p>
+					<p class="details__progress"><em>Progress:</em> {{::study.progress}}</p>
+					<p class="details__efsp"><em>Education for Sustainability aspects:</em> {{::study.EFSustainabilityA}}</p>
+					<p class="details__themes"><em>Themes:</em> {{::study.themes}}</p>
+                    <a class="details__icon" href="{{::study.studyURL}}">&nbsp;</a>
+                    <!-- Only for back end display -->
+					<!-- <p class="details__date"><em>date:</em> {{::study.date}}</p>
+					<p class="details__author"><em>author:</em> {{::study.author}}</p> -->
 				</div>
 
-			</a>
+			</div>
 		</div>
 
 	</div>
