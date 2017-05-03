@@ -2,21 +2,62 @@
 
 /* == Settings == */
 
-.temp-wrapper {
+.studies-page-wrap {
   background: $color-background-base;
   margin: 0 auto;
   max-width: 865px;
   padding: 20px;
 }
 
+.studieswrap {
+    margin: 20px 0;
+}
+
+.intro-text {
+    font-size: 1.2em;
+    line-height: 1.3em;
+}
+
 
 .searchcontrol {
   // display: inline-block;
-  margin: 10px;
+  margin: 10px 0;
   max-width: 320px;
 
   label {
     width: 100%;
+    position: relative;
+    .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px;
+        line-height: 1.3em;
+
+        /* Position the tooltip */
+        position: absolute;
+        z-index: 1;
+        /* Position tooltip bottom */
+        top: 135%;
+        left: 50%;
+        margin-left: -60px;
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent transparent #555 transparent;
+        }
+    }
+    &:hover .tooltiptext {
+        visibility: visible;
+    }
   }
 
   input {
@@ -31,22 +72,30 @@
 
 .themescontrol {
     display: inline-block;
-    margin: 10px;
+    margin: 10px 0;
 
     select {
         min-width: 200px;
     }
 }
 
+.EfSPcontrol {
+  display: block;
+  margin: 10px 0;
+}
+
 .yrLevelcontrol {
     // display: inline-block;
-    margin: 10px;
-    width: 202px;
+    margin-left: 0;
+    margin-right: 20px;
+    width: 308px; //202px;
 }
 
 .progresscontrol {
   display: inline-block;
-  margin: 10px;
+  // margin: 10px 0;
+  margin-left: 0;
+  margin-right: 20px;
   width: 394px;
 
   @media (max-width: 420px) {
@@ -58,14 +107,9 @@
   }
 }
 
-.EfSPcontrol {
-  display: block;
-  margin: 10px;
-}
-
 .clearbutton {
   display: inline-block;
-  margin-left: 10px;
+  margin-left: 0;
   margin-right: auto;
   width: 20%;
   min-width: 114px;

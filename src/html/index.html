@@ -8,12 +8,13 @@
 	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-<div ng-app="caseStudies" class="temp-wrapper">
-	<h1>Case Studies</h1>
+<div ng-app="caseStudies" class="studies-page-wrap">
+	<h1>Case studies</h1>
+    <p class="intro-text">NRM Education works with many schools and early learning sites that are working towards sustainability. Below are written, audio and video case studies to inspire you. There are several choices to narrow down your search.</p>
 	<div ng-controller="StudiesController" class="studieswrap">
 		<div class="searchInputs">
 			<div class="searchcontrol">
-				<label>Search </label><input ng-model="search.$" type="text" min="0" >
+				<label>Search <span class="tooltiptext">Enter words that may best describe the studies you're looking for.</span></label><input ng-model="search.$" type="text" min="0" >
 			</div>
 
 			<div class="themescontrol">
@@ -24,8 +25,8 @@
                     <option value="energy">Energy</option>
 					<option value="food garden">Food garden</option>
                     <option value="general">General</option>
-					<option value="Youth Voice">Youth Voice</option>
-					<option value="Outdoor play space">Outdoor play space</option>
+					<option value="youth">Youth Voice</option>
+					<option value="outdoor play">Outdoor play/learning space</option>
                     <option value="waste">Waste</option>
                     <option value="water">Water</option>
 				</select>
@@ -35,20 +36,20 @@
                 <label>Education for Sustainability aspects </label>
                 <select ng-model="search.EFSustainabilityA">
                     <option value=""> - </option>
-                    <option value="Community">Community</option>
-                    <option value="Curriculum">Curriculum and learning</option>
-                    <option value="Governance">Governance</option>
-                    <option value="Vision">Vision and values</option>
-                    <option value="Whole">Whole site approach</option>
+                    <option value="community">Community</option>
+                    <option value="curriculum">Curriculum and learning</option>
+                    <option value="governance">Governance</option>
+                    <option value="vision">Vision and values</option>
+                    <option value="whole">Whole site approach</option>
                     <option value="youth">Youth voice</option>
                 </select>
             </div>
 
 			<fieldset class="yrLevelcontrol">
-				<legend>Year Level </legend>
-				<label><input ng-model="search.yrLevel" ng-true-value="'early'" ng-false-value="''" type="checkbox" name="yearlvl" value="early"><em>Early</em></label>
-				<label><input ng-model="search.yrLevel" ng-true-value="'PS'" ng-false-value="''" type="checkbox" name="yearlvl" value="PS"><em>Primary</em></label>
-				<label><input ng-model="search.yrLevel" ng-true-value="'HS'" ng-false-value="''" type="checkbox" name="yearlvl" value="HS"><em>High</em></label>
+				<legend>Year level </legend>
+				<label><input ng-model="search.yrLevel" ng-true-value="'Early'" ng-false-value="''" type="checkbox" name="yearlvl" value="Early"><em>Early years</em></label>
+				<label><input ng-model="search.yrLevel" ng-true-value="'Primary'" ng-false-value="''" type="checkbox" name="yearlvl" value="Primary"><em>Primary school</em></label>
+				<label><input ng-model="search.yrLevel" ng-true-value="'High'" ng-false-value="''" type="checkbox" name="yearlvl" value="High"><em>High school</em></label>
 			</fieldset>
 
 			<fieldset class="progresscontrol">
@@ -56,7 +57,7 @@
 				<label><input ng-model="search.progress" ng-true-value="'Starting'" ng-false-value="''" type="checkbox" name="progress" value="Starting"><em>Starting</em></label>
 				<label><input ng-model="search.progress" ng-true-value="'Committing'" ng-false-value="''" type="checkbox" name="progress" value="Committing"><em>Committing</em></label>
 				<label><input ng-model="search.progress" ng-true-value="'Challenging'" ng-false-value="''" type="checkbox" name="progress" value="Challenging"><em>Challenging</em></label>
-				<label><input ng-model="search.progress" ng-true-value="'Transformation'" ng-false-value="''" type="checkbox" name="progress" value="Transformation"><em>Transformation</em></label>
+				<label><input ng-model="search.progress" ng-true-value="'Transforming'" ng-false-value="''" type="checkbox" name="progress" value="Transforming"><em>Transforming</em></label>
 			</fieldset>
 
             <div class="clearbutton">
