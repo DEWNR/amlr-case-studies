@@ -5,11 +5,17 @@
 .studies-page-wrap {  //used locally to replicate template & styles on server
   background: $color-background-base;
   margin: 0 auto;
-  width: 878px !important;
+  // width: 878px !important;
   max-width: 878px;
   padding: 20px !important;
   font-family: "Frutiger W01", Helvetica, Arial, sans-serif;
   font-size: 115%;
+  // local responsive testing
+  box-sizing: border-box;
+  float: none !important;
+  margin: auto !important;
+  width: 100% !important;
+
 }
 
 .studieswrap {
@@ -21,11 +27,28 @@
     line-height: 1.3em;
 }
 
+// .searchInputs {
+//     background-color: #f9f4fd; // #bf9fd6;
+//     padding: 10px;
+// }
+
+.searchset-control {
+    width: calc(100% - 20px);
+    vertical-align: top;
+    legend {
+        font-size: 120%;
+    }
+     /* desktop size only */
+    @media (min-width: 720px) {
+        width: 404px;
+        margin-right: 20px;
+    }
+}
 
 .searchcontrol {
   // display: inline-block;
   margin: 10px 0;
-  max-width: 320px;
+  // max-width: 320px;
 
   label {
     width: 100%;
@@ -67,6 +90,7 @@
     &[type='text'] {
       // line-height : 1.6em;
       height: 24px;
+      width: calc(100% - 60px);
       min-width: 250px;
       padding: 0 4px 0 4px;
     }
@@ -87,34 +111,74 @@
   margin: 10px 0;
 }
 
-.yrLevelcontrol {
+.yrLevelset-control {
     // display: inline-block;
+    margin-top: 2px;
     margin-left: 0;
     margin-right: 20px;
-    width: 320px; //308px; //202px;
-}
-
-.progresscontrol {
-  display: inline-block;
-  // margin: 10px 0;
-  margin-left: 0;
-  margin-right: 20px;
-  width: 404px; //394px;
-
-  @media (max-width: 420px) {
-    width: calc(100% - 40px);
-
+    // width: 320px; //308px; //202px;
+    width: calc(100% - 20px);
+    vertical-align: top;
     label {
       display: block;
+    }
+
+    /* tablet size only - not mobile and not desktop */
+  @media (min-width: 480px) and (max-width: 719px) {
+    width: calc(100% - 20px);
+    label {
+      display: inline-block;
+    }
+  }
+
+  /* desktop size only */
+  @media (min-width: 720px) {
+    width: 140px;
+    height: 226px;
+    input[type='checkbox'] {
+        height: 30px;
     }
   }
 }
 
+.progressset-control {
+  display: inline-block;
+  // margin: 10px 0;
+  margin-top: 2px;
+  margin-left: 0;
+  margin-right: 20px;
+  // width: 404px; //394px;
+  width: 140px;
+  vertical-align: top;
+  label {
+      display: block;
+  }
+  width: calc(100% - 20px);
+
+  /* tablet size only - not mobile and not desktop */
+  @media (min-width: 480px) and (max-width: 719px) {
+    width: calc(100% - 20px);
+    label {
+      display: inline-block;
+    }
+  }
+
+  /* desktop size only */
+  @media (min-width: 720px) {
+    width: 140px;
+    height: 226px;
+    margin-right: 0;
+    input[type='checkbox'] {
+        height: 30px;
+    }
+  }
+
+}
+
 .clearbutton {
   display: inline-block;
-  margin-left: 0;
-  margin-right: auto;
-  width: 20%;
+  font-family: "Frutiger W01", Helvetica, Arial, sans-serif;
+  margin: 10px auto 10px 0;
   min-width: 114px;
 
   button {
