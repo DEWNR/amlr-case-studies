@@ -2,11 +2,14 @@
 
 /* == Settings == */
 
-.studies-page-wrap {
+.studies-page-wrap {  //used locally to replicate template & styles on server
   background: $color-background-base;
   margin: 0 auto;
-  max-width: 865px;
-  padding: 20px;
+  width: 878px !important;
+  max-width: 878px;
+  padding: 20px !important;
+  font-family: "Frutiger W01", Helvetica, Arial, sans-serif;
+  font-size: 115%;
 }
 
 .studieswrap {
@@ -88,7 +91,7 @@
     // display: inline-block;
     margin-left: 0;
     margin-right: 20px;
-    width: 308px; //202px;
+    width: 320px; //308px; //202px;
 }
 
 .progresscontrol {
@@ -96,7 +99,7 @@
   // margin: 10px 0;
   margin-left: 0;
   margin-right: 20px;
-  width: 394px;
+  width: 404px; //394px;
 
   @media (max-width: 420px) {
     width: calc(100% - 40px);
@@ -201,7 +204,7 @@ input {
     margin-top: 22px;
     // margin-right: 10px;
     vertical-align: top;
-    width: 288px;
+    width: 270px;  //288px
     a {
         display: block;
         padding-right: 20px;
@@ -220,6 +223,9 @@ input {
         min-width: 60px;
         margin-right: 4px;
     }
+    a {
+        text-decoration: none!important;
+    }
   }
 
   a img {
@@ -228,8 +234,9 @@ input {
     width: 100%;
   }
 
-  :hover {
+  a > :hover {
     text-decoration: none;
+    color: #bf9fd6;
   }
 
   p {
@@ -245,7 +252,7 @@ input {
 
     // PDF file
     &[href$='.pdf'] {
-        background: url('../icons/file-pdf-o.svg');
+        background: url('file-pdf-o.svg');
         background-size: cover;
         display: block;
         height: 20px;
@@ -257,7 +264,7 @@ input {
     // YouTube link
     &[href*='.youtu.be'],
     &[href*='.youtube.com'] {
-        background: url('../icons/youtube-play.svg');
+        background: url('youtube-play.svg');
         background-size: cover;
         display: block;
         height: 20px;
@@ -270,7 +277,7 @@ input {
     &[href$='.htm'],
     &[href$='.html'],
     &[href*='/adelaidemtloftyranges/case-study/'] {
-        background: url('../icons/file-o.svg');
+        background: url('file-o.svg');
         background-size: cover;
         display: block;
         height: 20px;
@@ -283,7 +290,7 @@ input {
     &[href$='.docx'],
     &[href$='.rtf'] {
         // DOC file
-        background: url('../icons/file-word-o.svg');
+        background: url('file-word-o.svg');
         background-size: cover;
         display: block;
         height: 20px;

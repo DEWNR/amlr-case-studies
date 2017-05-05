@@ -40,7 +40,7 @@
 
         "icons": {
             "src": "icons",
-            "dest": "icons",
+            "dest": "css",
             "extensions": ["svg", "gif", "png"]
         },
 

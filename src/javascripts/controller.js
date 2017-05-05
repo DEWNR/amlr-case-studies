@@ -1,20 +1,13 @@
 var app = angular.module('caseStudies', []);
 
 app.controller('StudiesController', function($scope, $http) {
-	$http.get('js/studies-data.json')
-		.then(function(res){
-			$scope.allData = res.data;
 
-            // TODO: restrict Search box to title's and schools
-            // $scope.search = '';
-            // $scope.search.titleandschool = $scope.allData.map(function(study) {
-            //     return {
-            //         title: study.title,
-            //         schools: study.schools
-            //     }
-            // });
+    $scope.allData = allData;
 
-		});
+	// $http.get('js/studies-data.json')
+	// 	.then(function(res){
+	// 		$scope.allData = res.data;
+	// 	});
 
 
 
@@ -30,3 +23,30 @@ app.controller('StudiesController', function($scope, $http) {
 	};
 
 });
+
+
+var allData = [
+ {
+   "title": "Ecological Conversion: An Education for Sustainability Learning Story",
+   "schools": "All Saints Catholic Primary School",
+   "yrLevel": "Primary school",
+   "progress": "Committing",
+   "EFSustainabilityA": "Curriculum and learning, Vision and values, Whole site approach",
+   "themes": "Biodiversity, Food garden",
+   "date": 2014,
+   "author": "Jeremy",
+   "studyURL": "studies/study1.pdf",
+   "imageURL": "images/pic268x150.png"
+ },
+ {
+   "title": "An Education for Sustainability learning story from Allenby Gardens Primary School",
+   "schools": "Allenby Gardens Primary School",
+   "yrLevel": "Primary school",
+   "progress": "Challenging",
+   "EFSustainabilityA": "Curriculum and learning, ",
+   "themes": "Food garden",
+   "date": 2015,
+   "author": "Amy?",
+   "studyURL": "studies/case-study-2.pdf",
+   "imageURL": "//localhost:3002/images/horsnell-scrub-view.jpg"
+ }];
