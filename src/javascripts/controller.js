@@ -1,6 +1,6 @@
 var app = angular.module('caseStudies', []);
 
-app.controller('StudiesController', function($scope, $http) {
+app.controller('StudiesController', ['$scope', '$http', function($scope, $http) {
 
     $scope.allData = allData;
 
@@ -22,7 +22,7 @@ app.controller('StudiesController', function($scope, $http) {
 
 	};
 
-});
+}]);
 
 
 var allData = [
