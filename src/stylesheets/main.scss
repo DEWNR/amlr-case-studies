@@ -53,6 +53,7 @@
   label {
     width: 100%;
     position: relative;
+    margin-right: 16px;
     .tooltiptext {
         visibility: hidden;
         width: 120px;
@@ -90,7 +91,7 @@
     &[type='text'] {
       // line-height : 1.6em;
       height: 24px;
-      width: calc(100% - 60px);
+      width: calc(100% - 74px);
       min-width: 250px;
       padding: 0 4px 0 4px;
     }
@@ -187,6 +188,7 @@
     border-radius: 7px;
     border: 2px solid #bf9fd6;
     background-color: #fff;
+    // cursor: pointer;
 
     // background-color: #59178a;
     // border: 0;
@@ -207,9 +209,9 @@ fieldset {
   margin-bottom: 6px;
   margin-right: 10px;
   // max-width: 46%;
-  label {
-    margin-right: 0;
-  }
+  // label {
+  //   margin-right: 0;
+  // }
   label:not(:last-of-type) {
     margin-right: 6px;
   }
@@ -217,6 +219,7 @@ fieldset {
 
 legend {
   padding: 0.2em 0.5em;
+  color: #bf9fd6;
 }
 
 select {
@@ -241,6 +244,7 @@ input {
     height: 20px;
     vertical-align: middle;
     width: 20px;
+    margin-right: 8px;
   }
 }
 
