@@ -7,12 +7,16 @@
     <link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/e0cc203f-7221-4daf-a2d5-815483dba107.css" media="screen" />
 	<link rel="stylesheet" href="//www.naturalresources.sa.gov.au/files/templates/00000000-0000-0000-0000-000000000000/f399c717-3483-4ac4-ac72-f5b9f904f8c1/main-ffbe7f0cba.css">
 	<link rel="stylesheet" href="css/main.css">
+    <base href="/">
 </head>
 <body>
 <div id="content" class="studies-page-wrap">
 <h1>Case studies</h1>
 
 <!-- code to paste into template -->
+<link rel="stylesheet" href="css/main.css">
+
+<ItemData DataDefinition="DC_Title" Template="HTML" />
 <div ng-app="caseStudies">
 
     <p class="intro-text">NRM Education works with many schools and early learning sites that are working towards sustainability. Below are written, audio and video case studies to inspire you. There are several choices to narrow down your search.</p>
@@ -85,17 +89,17 @@
 			<div ng-repeat="study in allData | filter:search | orderBy: 'title' " class="study ng-cloak" href="{{::study.studyURL}}">
 
 				<div class="study__image">
-					<a href="{{::study.studyURL}}" target="_blank"><img ng-src="{{::study.imageURL}}" alt="thumbnail for {{::study.title}}"></a>
+					<a href="//{{::study.studyURL}}" target="_blank"><img ng-src="//{{::study.imageURL}}" alt="thumbnail for {{::study.title}}"></a>
 				</div>
 
 				<div class="study__details">
-					<a href="{{::study.studyURL}}" target="_blank"><h2 class="details__title">{{::study.title}}</h2></a>
+					<a href="//{{::study.studyURL}}" target="_blank"><h2 class="details__title">{{::study.title}}</h2></a>
 					<p class="details__schools"><em>(pre)School/s:</em> {{::study.schools}}</p>
 					<p class="details__yrLevel"><em>Year level:</em> {{::study.yrLevel}}</p>
 					<p class="details__progress"><em>Progress:</em> {{::study.progress}}</p>
 					<p class="details__efsp"><em>Education for Sustainability aspects:</em> {{::study.EFSustainabilityA}}</p>
 					<p class="details__themes"><em>Themes:</em> {{::study.themes}}</p>
-                    <a class="details__icon" href="{{::study.studyURL}}" target="_blank">&nbsp;</a>
+                    <a class="details__icon" href="//{{::study.studyURL}}" target="_blank">&nbsp;</a>
                     <!-- Only for back end display -->
 					<!-- <p class="details__date"><em>date:</em> {{::study.date}}</p>
 					<p class="details__author"><em>author:</em> {{::study.author}}</p> -->
