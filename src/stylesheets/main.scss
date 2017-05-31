@@ -275,7 +275,9 @@ input {
     width: 270px;  //288px
     a {
         display: block;
-        padding-right: 20px;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
     }
   }
 
@@ -297,9 +299,12 @@ input {
   }
 
   a img {
-    height: 150px;
-    margin-bottom: 20px;
+    min-height: 100px;
+    // height: 150px;
+    // margin-bottom: 20px;
     width: 100%;
+    background-color: #efefef;
+    color: #888;
   }
 
   a > :hover {
@@ -330,8 +335,8 @@ input {
     }
 
     // YouTube link
-    &[href*='.youtu.be'],
-    &[href*='.youtube.com'] {
+    &[href*='youtu.be'],
+    &[href*='youtube.com'] {
         background: url('youtube-play.svg');
         background-size: cover;
         display: block;
@@ -379,7 +384,7 @@ input {
     width: 100%;
 
     img {
-      height: 100%;
+      // height: 100%;
       width: 100%;
     }
   }
@@ -387,6 +392,23 @@ input {
   .list .study__details {
     display: block;
     width: calc(100% - 10px);
+  }
+
+}
+
+
+@media (min-width: 769px) {
+
+  .list .study__image {
+    // padding-right: 17px;
+  }
+
+  .list .study__image a {
+    display: inline-block;
+    // padding-right: 20px;
+    width: 250px;
+    height: 150px;
+    overflow: hidden;
   }
 
 }

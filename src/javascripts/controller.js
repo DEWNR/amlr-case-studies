@@ -45,7 +45,7 @@ var allData = [
    "themes": "Biodiversity, Food garden",
    "date": 2014,
    "author": "Jeremy",
-   "studyURL": "http://localhost:3000/studies/study1.pdf",
+   "studyURL": "http://localhost:3000/studies/study1.pdf,https://youtu.be/DeXoACwOT1o?list=RDW5SPhETTgEc",
    "imageURL": "http://localhost:3000/images/pic268x150.png"
  },
  {
@@ -68,8 +68,15 @@ allData.forEach(function(part, index, theArray) {
 
     var study = theArray[index];
 
+    // regex replaces empty url with default image
+    study.imageURL = study.imageURL.replace(/^\?w=[0-9]{1,3}/gi, '/files/sharedassets/adelaide_and_mt_lofty_ranges/images/education/case_study_thumbnails/noimage2.svg');
     // regex replaces "http://" and "//"
     study.imageURL = study.imageURL.replace(/https:\/\/|http:\/\/|\/\/|/gi, '');
+    study.imageURL = study.imageURL.replace(/\/files\/sharedassets/gi, 'www.environment.sa.gov.au/files/sharedassets');
+
+    // if multiple urls
+    var myvar = study.studyURL.split(',');
+    console.log(myvar);
 
     // regex replaces "http://" and "//"
     study.studyURL = study.studyURL.replace(/https:\/\/|http:\/\/|\/\/|/gi, '');
