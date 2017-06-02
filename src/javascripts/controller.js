@@ -2,9 +2,16 @@
 
 var app = angular.module('caseStudies', []);
 
-app.controller('StudiesController', ['$scope', '$http', function($scope, $http) {
+app.controller('StudiesController', ['$scope', '$sce', '$http', function($scope, $sce, $http) {
 
     $scope.allData = allData;
+    angular.forEach($scope.allData, function(item,index){
+       item['studyURL'] = $sce.trustAsHtml(item['studyURL']);
+
+       item['EFSustainabilityA'] = item['EFSustainabilityA'].replace(/,\s*$/, "");
+       item['themes'] = item['themes'].replace(/,\s*$/, "");
+    });
+    // console.log(allData);
 
 	// $http.get('js/studies-data.json')
 	// 	.then(function(res){
@@ -15,7 +22,7 @@ app.controller('StudiesController', ['$scope', '$http', function($scope, $http) 
 
 	$scope.clearFilter = function() {
 		// $scope.search.$ = '';
-        if (typeof $scope.search == "object") {
+        if (typeof $scope.search == 'object') {
             $scope.search.themes = '';
             $scope.search.yrLevel = '';
             $scope.search.progress = '';
@@ -45,7 +52,7 @@ var allData = [
    "themes": "Biodiversity, Food garden",
    "date": 2014,
    "author": "Jeremy",
-   "studyURL": "http://localhost:3000/studies/study1.pdf,https://youtu.be/DeXoACwOT1o?list=RDW5SPhETTgEc",
+   "studyURL": "<li><a href='http://localhost:3000/studies/study1.pdf' target='_blank'>PDF link</a></li><li><a href='https://youtu.be/DeXoACwOT1o?list=RDW5SPhETTgEc' target='_blank'>YouTube link</a></li>",
    "imageURL": "http://localhost:3000/images/pic268x150.png"
  },
  {
@@ -57,7 +64,7 @@ var allData = [
    "themes": "Food garden",
    "date": 2015,
    "author": "Amy?",
-   "studyURL": "http://localhost:3000/studies/case-study-2.pdf",
+   "studyURL": "<li><a href='http://localhost:3000/studies/case-study-2.pdf' target='_blank'>Casestudy link</a></li><li><a href='http://localhost:3000/studies/case-study-2.pdf' target='_blank'>Casestudy link</a></li><li><a href='http://localhost:3000/studies/case-study-2.pdf' target='_blank'>Casestudy link</a></li>",
    "imageURL": "//localhost:3000/images/horsnell-scrub-view.jpg"
  }];
 
@@ -75,12 +82,13 @@ allData.forEach(function(part, index, theArray) {
     study.imageURL = study.imageURL.replace(/\/files\/sharedassets/gi, 'www.environment.sa.gov.au/files/sharedassets');
 
     // if multiple urls
-    var myvar = study.studyURL.split(',');
-    console.log(myvar);
+//    $scope.thisStudyURL = $sce.trustAsHtml(study.studyURL);
+    // var myvar = study.studyURL.split(',');
+    // console.log(myvar);
 
-    // regex replaces "http://" and "//"
-    study.studyURL = study.studyURL.replace(/https:\/\/|http:\/\/|\/\/|/gi, '');
-    study.studyURL = study.studyURL.replace(/\/files\/sharedassets/gi, 'www.environment.sa.gov.au/files/sharedassets');
+    // // regex replaces "http://" and "//"
+    // study.studyURL = study.studyURL.replace(/https:\/\/|http:\/\/|\/\/|/gi, '');
+    // study.studyURL = study.studyURL.replace(/\/files\/sharedassets/gi, 'www.environment.sa.gov.au/files/sharedassets');
 
 });
 

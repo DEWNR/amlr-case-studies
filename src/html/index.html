@@ -90,17 +90,20 @@
 			<div ng-repeat="study in allData | filter:search | orderBy: 'title' " class="study ng-cloak" href="{{::study.studyURL}}">
 
 				<div class="study__image">
-					<a href="//{{::study.studyURL}}" target="_blank"><img ng-src="//{{::study.imageURL}}" alt="thumbnail for {{::study.title}}"></a>
+					<span><img ng-src="//{{::study.imageURL}}" alt="thumbnail for {{::study.title}}"></span>
 				</div>
 
 				<div class="study__details">
-					<a href="//{{::study.studyURL}}" target="_blank"><h2 class="details__title">{{::study.title}}</h2></a>
+					<h2 class="details__title">{{::study.title}}</h2>
 					<p class="details__schools"><em>(pre)School/s:</em> {{::study.schools}}</p>
 					<p class="details__yrLevel"><em>Year level:</em> {{::study.yrLevel}}</p>
 					<p class="details__progress"><em>Progress:</em> {{::study.progress}}</p>
 					<p class="details__efsp"><em>Education for Sustainability aspects:</em> {{::study.EFSustainabilityA}}</p>
 					<p class="details__themes"><em>Themes:</em> {{::study.themes}}</p>
-                    <a class="details__icon" href="//{{::study.studyURL}}" target="_blank">&nbsp;</a>
+
+                    <ul class="details__links" ng-bind-html="study.studyURL"></ul>
+
+                    <!-- <a class="details__icon" href="//" target="_blank">&nbsp;</a> -->
                     <!-- Only for back end display -->
 					<!-- <p class="details__date"><em>date:</em> {{::study.date}}</p>
 					<p class="details__author"><em>author:</em> {{::study.author}}</p> -->

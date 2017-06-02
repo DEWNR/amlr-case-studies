@@ -273,7 +273,7 @@ input {
     // margin-right: 10px;
     vertical-align: top;
     width: 270px;  //288px
-    a {
+    span {
         display: block;
         width: 100%;
         height: 100%;
@@ -293,8 +293,16 @@ input {
         min-width: 60px;
         margin-right: 4px;
     }
+    ul {
+      list-style: none outside none;
+      padding: 0;
+    }
+    li {
+      margin: 8px 0;
+    }
     a {
-        text-decoration: none!important;
+      padding: 6px 0;
+      // text-decoration: none!important;
     }
   }
 
@@ -321,55 +329,59 @@ input {
 }
 
 
-.study__details>a:last-of-type {
+.study__details a:last-of-type {
 
     // PDF file
-    &[href$='.pdf'] {
+    &[href$='.pdf']::before {
+        content: '';
         background: url('file-pdf-o.svg');
         background-size: cover;
-        display: block;
+        display: inline-block;
         height: 20px;
         width: 20px;
         vertical-align: top;
-        margin: 4px 0 10px 0;
+        margin-right: 6px;
     }
 
     // YouTube link
-    &[href*='youtu.be'],
-    &[href*='youtube.com'] {
+    &[href*='youtu.be']::before,
+    &[href*='youtube.com']::before {
+        content: '';
         background: url('youtube-play.svg');
         background-size: cover;
-        display: block;
+        display: inline-block;
         height: 20px;
         width: 20px;
         vertical-align: top;
-        margin: 4px 0 10px 0;
+        margin-right: 6px;
     }
 
     // HTML file/link
-    &[href$='.htm'],
-    &[href$='.html'],
-    &[href*='/adelaidemtloftyranges/case-study/'] {
+    &[href$='.htm']::before,
+    &[href$='.html']::before,
+    &[href*='/adelaidemtloftyranges/case-study/']::before {
+        content: '';
         background: url('file-o.svg');
         background-size: cover;
-        display: block;
+        display: inline-block;
         height: 20px;
         width: 20px;
         vertical-align: top;
-        margin: 4px 0 10px 0;
+        margin-right: 6px;
     }
 
-    &[href$='.doc'],
-    &[href$='.docx'],
-    &[href$='.rtf'] {
-        // DOC file
+    // DOC file
+    &[href$='.doc']::before,
+    &[href$='.docx']::before,
+    &[href$='.rtf']::before {
+        content: '';
         background: url('file-word-o.svg');
         background-size: cover;
-        display: block;
+        display: inline-block;
         height: 20px;
         width: 20px;
         vertical-align: top;
-        margin: 4px 0 10px 0;
+        margin-right: 6px;
     }
 
 
@@ -403,7 +415,7 @@ input {
     // padding-right: 17px;
   }
 
-  .list .study__image a {
+  .list .study__image span {
     display: inline-block;
     // padding-right: 20px;
     width: 250px;
