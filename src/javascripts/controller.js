@@ -1,5 +1,22 @@
 
+// prevent FORM from submitting to server
+const element = document.getElementById('mainForm') || null;
 
+if (element !== null || undefined) {
+    element.addEventListener('submit', event => {
+      event.preventDefault();
+      // console.log('submit prevented.');
+    });
+}
+
+//get urlHash
+var urlHash = location.hash.replace(/^#/, '').trim();
+console.log(urlHash);
+
+const searchElement = document.getElementsByClass('searchcontrol input') || null;
+
+
+// angular web app
 var app = angular.module('caseStudies', []);
 
 app.controller('StudiesController', ['$scope', '$sce', '$http', function($scope, $sce, $http) {

@@ -10,6 +10,9 @@
     <base href="/">
 </head>
 <body>
+<!-- <form id="mainForm" method="post" action="#index.html">
+    <input type="search" name="" value="" placeholder="">
+</form> -->
 <div id="content" class="studies-page-wrap">
 <h1>Case studies</h1>
 
@@ -36,10 +39,10 @@
     				<select ng-model="search.themes">
     					<option value=""> - </option>
     					<option value="biodiversity">Biodiversity</option>
-                        <option value="energy">Energy</option>
+                        <!-- <option value="energy">Energy</option> -->
     					<option value="food garden">Food garden</option>
                         <option value="general">General</option>
-    					<option value="youth">Youth Voice</option>
+    					<!-- <option value="youth">Youth Voice</option> -->
     					<option value="outdoor play">Outdoor play/learning space</option>
                         <option value="waste">Waste</option>
                         <option value="water">Water</option>
@@ -77,8 +80,8 @@
 			<fieldset class="progressset-control">
 				<legend>Progress </legend>
 				<label><input ng-model="search.progress" ng-true-value="'Starting'" ng-false-value="''" type="checkbox" name="progress" value="Starting"><em>Starting</em></label>
+                <label><input ng-model="search.progress" ng-true-value="'Challenging'" ng-false-value="''" type="checkbox" name="progress" value="Challenging"><em>Challenging</em></label>
 				<label><input ng-model="search.progress" ng-true-value="'Committing'" ng-false-value="''" type="checkbox" name="progress" value="Committing"><em>Committing</em></label>
-				<label><input ng-model="search.progress" ng-true-value="'Challenging'" ng-false-value="''" type="checkbox" name="progress" value="Challenging"><em>Challenging</em></label>
 				<label><input ng-model="search.progress" ng-true-value="'Transforming'" ng-false-value="''" type="checkbox" name="progress" value="Transforming"><em>Transforming</em></label>
 			</fieldset>
 
@@ -87,7 +90,7 @@
 		</div>
 
 		<div class="list" ng-cloak>
-			<div ng-repeat="study in allData | filter:search | orderBy: 'title' " class="study ng-cloak" href="{{::study.studyURL}}">
+			<div ng-repeat="study in allData | filter:search | orderBy: 'title' as filtered_result " class="study ng-cloak" href="{{::study.studyURL}}">
 
 				<div class="study__image">
 					<span><img ng-src="//{{::study.imageURL}}" alt="thumbnail for {{::study.title}}"></span>
@@ -111,6 +114,7 @@
 
 			</div>
 		</div>
+        <div ng-show="filtered_result.length == 0"><h2>No results found.</h2></div>
 
 	</div>
 
