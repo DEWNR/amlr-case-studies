@@ -10,14 +10,17 @@ This project allows developers to work locally on the AMLR Case Studies Angular 
 
 To run project
 
--- gulp
---
+```
+gulp
+```
 
--- gulp production
---
+```
+gulp production
+```
 
--- gulp js
---
+```
+gulp js
+```
 
 ## Install
 
@@ -25,8 +28,9 @@ AMLR Case Studies page uses Gulp.
 
 To install the AMLR Case Studies repository
 
--- npm install
---
+```
+npm install
+```
 
 
 
