@@ -10,10 +10,12 @@ if (element !== null || undefined) {
 }
 
 //get urlHash
-var urlHash = location.hash.replace(/^#/, '').trim();
-console.log(urlHash);
+var urlHash = decodeURI( location.hash.replace(/^#/, '').trim() ).toLowerCase();
 
-const searchElement = document.getElementsByClass('searchcontrol input') || null;
+
+
+
+
 
 
 // angular web app
@@ -48,15 +50,40 @@ app.controller('StudiesController', ['$scope', '$sce', '$http', function($scope,
 
 	};
 
+
+    // Search for words in urlhash
+    const searchElement = document.querySelectorAll('.searchcontrol > input') || null;
+    // console.log(searchElement);
+    const searchInput = document.querySelector('.searchcontrol > input') || null;
+    // console.log(searchInput);
+
+    if (searchElement != null) {
+        // console.log('search element not null');
+        // searchInput.setAttribute('value', 'biodiversity');
+        // console.log(urlHash);
+        $scope.search = {$: urlHash};
+        // console.log($scope.search);
+    }
+
+
+    // if ($scope.search.$.length > 0) {
+    //     console.log('length is greater than 0');
+    //     window.location.hash = $scope.search.$;
+    // };
+
+
+    $scope.change = function searchInputChanged() {
+        window.location.hash = $scope.search.$;
+        // $scope.search.$ = 'test';
+    };
+
+
+
+
+
 }]);
 
-// angular.config(function($locationProvider) {
-//     $locationProvider.html5Mode({
-//         enabled: true,
-//         requireBase: false,
-//         rewriteLinks: false
-//     });
-// });
+
 
 // Comment out below before uploading to website. A DLV will create this.
 var allData = [
