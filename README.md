@@ -6,6 +6,17 @@
 This project allows developers to work locally on the AMLR Case Studies Angular web page, to see and test changes before transfering onto the CMS.
 
 
+## Install
+
+AMLR Case Studies page uses Gulp.
+
+To install the AMLR Case Studies repository
+
+```
+npm install
+```
+
+
 ## Usage
 
 To run project
@@ -21,17 +32,6 @@ gulp production
 ```
 gulp js
 ```
-
-## Install
-
-AMLR Case Studies page uses Gulp.
-
-To install the AMLR Case Studies repository
-
-```
-npm install
-```
-
 
 
 ## Deployment
