@@ -1,9 +1,9 @@
 
 // prevent FORM from submitting to server
-const element = document.getElementById('mainForm') || null;
+var element = document.getElementById('mainForm') || null;
 
 if (element !== null || undefined) {
-    element.addEventListener('submit', event => {
+    element.addEventListener('submit', function(event) {
       event.preventDefault();
       // console.log('submit prevented.');
     });
@@ -52,9 +52,9 @@ app.controller('StudiesController', ['$scope', '$sce', '$http', function($scope,
 
 
     // Search for words in urlhash
-    const searchElement = document.querySelectorAll('.searchcontrol > input') || null;
+    var searchElement = document.querySelectorAll('.searchcontrol > input') || null;
     // console.log(searchElement);
-    const searchInput = document.querySelector('.searchcontrol > input') || null;
+    var searchInput = document.querySelector('.searchcontrol > input') || null;
     // console.log(searchInput);
 
     if (searchElement != null) {
