@@ -4,6 +4,7 @@ var path         = require('path')
 var rev          = require('gulp-rev')
 var revNapkin    = require('gulp-rev-napkin')
 var uglify       = require('gulp-uglify')
+var gutil        = require('gulp-util')
 
 // 3) Rev and compress JS files (this is done after assets, so that if a
 //    referenced asset hash changes, the parent hash will change as well
@@ -11,6 +12,7 @@ gulp.task('rev-js', function(){
     return gulp.src(path.join(config.root.dest,'/**/*.js'))
         .pipe(rev())
         .pipe(uglify())
+        .on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
         .pipe(gulp.dest(config.root.dest))
         .pipe(revNapkin({verbose: false}))
         .pipe(rev.manifest(path.join(config.root.dest, 'rev-manifest.json'), {merge: true}))
