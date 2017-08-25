@@ -384,6 +384,33 @@ input {
         margin-right: 6px;
     }
 
+    // Vimeo link
+    &[href*='vimeo.com']::before {
+        content: '';
+        background: url('vimeo-square.svg');
+        background-size: cover;
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+        vertical-align: top;
+        margin-right: 6px;
+    }
+
+    // Audio link
+    &[href$='.mp3']::before,
+    &[href$='.ogg']::before,
+    &[href$='.wav']::before,
+    &[href*='soundcloud.com']::before {
+        content: '';
+        background: url('volume-down.svg');
+        background-size: cover;
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+        vertical-align: top;
+        margin-right: 6px;
+    }
+
 
 }
 

@@ -2,7 +2,7 @@ var config       = require('../config')
 var gulp         = require('gulp')
 var gulpSequence = require('gulp-sequence')
 
-var assetTasks = ['fonts', 'images']
+var assetTasks = ['fonts', 'images', 'icons']
 var codeTasks = ['html', 'css', 'js']
 
 var productionTask = function(cb) {
