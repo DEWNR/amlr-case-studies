@@ -16,7 +16,7 @@ var urlHash = decodeURI( location.hash.replace(/^#/, '').trim() ).toLowerCase();
 
 
 
-
+var allData = '//www.environment.sa.gov.au/feed.rss?listname=amlr-cl-case-studies';
 
 // angular web app
 var app = angular.module('caseStudies', []);
